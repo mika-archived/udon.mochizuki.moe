@@ -1,7 +1,8 @@
 # UdonSharp のインストール
 
 C# プログラミングで Udon ロジックを作るためには、 UdonSharp のインストールが必要です。  
-下記リンクから、 UdonSharp の最新版をダウンロードし、プロジェクトにインポートしてください。
+下記リンクから、 UdonSharp の最新版をダウンロードし、プロジェクトにインポートしてください。  
+(下記リンクは常に最新版に向いているので、ページ移動後にさらに移動する必要はありません)
 
 -   [MerlinVR/UdonSharp - Latest Release](https://github.com/MerlinVR/UdonSharp/releases/latest){target=\_blank}
 
