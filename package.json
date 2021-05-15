@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "udon.mochizuki.moe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Natsuneko <me@mochizuki.moe>",
+  "license": "CC-BY-4.0 International",
+  "devDependencies": {
+    "prettier": "^2.3.0"
+  }
+}

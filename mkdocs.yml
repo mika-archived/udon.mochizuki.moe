@@ -1,0 +1,99 @@
+# Project Information
+site_name: udon.mochizuki.moe
+site_url: https://udon.mochizuki.moe/
+site_author: Natsuneko
+
+# Preview Controls
+use_directory_urls: true
+
+# Git Repository
+repo_url: https://github.com/mika-f/udon.mochizuki.moe
+repo_name: mika-f/udon.mochizuki.moe
+edit_uri: edit/master/docs/
+
+# Copyright
+copyright: Copyright &copy 2021 Natsuneko (Natsuneko Laboratory)
+
+# Extra Resources
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/6jz
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/mika-f
+
+extra_css:
+  - assets/css/figure.css
+  - assets/css/highlight.css
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js
+  - assets/js/medium-zoom.js
+
+# Navigation
+nav:
+  - Home: index.md
+  - Udon 入門:
+      SDK3 のインストール: getting-started/installation.md
+      UdonSharp のインストール: getting-started/udon-sharp-installation.md
+      Graph と U# どちらを使うべき？: getting-started/choose-udon-graph-or-udon-sharp.md
+      Udon Graph Editor の操作方法: getting-started/user-guide-of-udon-graph-editor.md
+      初めての Udon コンポーネント: getting-started/first-your-udon-component.md
+  - Udon ロジック:
+      基本事項: udon-logic/basis.md
+  - UdonSharp エディター拡張:
+      前提事項: udon-editor/requirements.md
+
+# Theme Configuration
+theme:
+  name: material
+  features:
+    - navigation.tabs
+  icon:
+    repo: fontawesome/brands/github
+  language: ja
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      toggle:
+        icon: material/weather-sunny
+        name: ダークモードへ変更
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: light blue
+      toggle:
+        icon: material/weather-night
+        name: ライトモードへ変更
+
+# MkDocs & Theme Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - fontawesome_markdown
+  - footnotes
+  - meta
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
+      toc_depth: 3
+
+# MkDocs Plugins
+plugins:
+  - search:
+      lang: ja
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Tokyo
+      locale: ja
+      fallback_to_build_date: true
