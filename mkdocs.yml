@@ -33,6 +33,7 @@ extra_javascript:
 nav:
   - Home: index.md
   - Udon 入門:
+      Udon を使って出来ること: getting-started/what-you-can-do-with-udon.md
       SDK3 のインストール: getting-started/installation.md
       UdonSharp のインストール: getting-started/udon-sharp-installation.md
       Graph と U# どちらを使うべき？: getting-started/choose-udon-graph-or-udon-sharp.md
