@@ -9,6 +9,13 @@
 面白くない？はい、どんなものでも始めて触ってみる場合はそんなものです。
 
 まずは、空のシーンを作成してください。  
+空のシーンはプロジェクトビューにて右クリックから「Create」→「Scene」にて作成できます。
+
+<figure>
+  <img src="https://assets.mochizuki.moe/udon/getting-started/create-empty-scene.png" width="400px" data-zoomable="true">
+  <figcaption>上記画像にて、ハイライトされている部分を順にクリックしていく</figcaption>
+</figure>
+
 シーンを作成したら、 [SDK3 のインストール](/getting-started/installation)で行ったように、 `VRCWorld` をワールドに設置します。  
 設置後、適当な Cube を作成してください。  
 Cube はシーンヒエラルキーにて右クリックから「3D Object」→「Cube」にて作成することが出来ます。
