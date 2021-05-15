@@ -37,8 +37,8 @@ nav:
       SDK3 のインストール: getting-started/installation.md
       UdonSharp のインストール: getting-started/udon-sharp-installation.md
       Graph と U# どちらを使うべき？: getting-started/choose-udon-graph-or-udon-sharp.md
-      Udon Graph Editor の操作方法: getting-started/user-guide-of-udon-graph-editor.md
       初めての Udon コンポーネント: getting-started/your-first-udon-component.md
+      Udon Graph Editor の操作方法: getting-started/user-guide-of-udon-graph-editor.md
   - Udon ロジック:
       基本事項: udon-logic/basis.md
   - UdonSharp エディター拡張:
