@@ -96,7 +96,9 @@ VRChat では、 Udon ギミックでエラーが発生した場合は、それ�
 
 多くの場合は、次の文字列をファイル内で検索することで見つけることが出来ます。
 
-`[UdonBehaviour] An exception occurred during Udon execution, this UdonBehaviour will be halted.`
+```
+[UdonBehaviour] An exception occurred during Udon execution, this UdonBehaviour will be halted.
+```
 
 ## エラーログの見方
 
