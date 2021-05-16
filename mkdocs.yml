@@ -40,6 +40,7 @@ nav:
       Graph と U# どちらを使うべき？: getting-started/choose-udon-graph-or-udon-sharp.md
       初めての Udon コンポーネント: getting-started/your-first-udon-component.md
       Udon Graph Editor の操作方法: getting-started/user-guide-of-udon-graph-editor.md
+      基本構文: getting-started/basic-syntax.md
       イベントについて:
         イベントとは: getting-started/what-is-event.md
         イベントの種類: getting-started/kinds-of-event.md
