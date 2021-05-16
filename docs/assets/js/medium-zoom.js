@@ -1,1 +1,1 @@
-mediumZoom('[data-zoomable]')
+mediumZoom('[data-zoomable]', { margin: 60 })
