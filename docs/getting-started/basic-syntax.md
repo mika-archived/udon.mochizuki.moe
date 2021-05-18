@@ -11,8 +11,72 @@
 
 型とは、わかりやすく言えば「どのようなデータを持っているか」についての種類を表したものです。  
 Unity でよく出てくる例で言えば、 Transform 型というものがあり、これにはどの位置か、どの角度か、大きさはどれくらいか、といったデータが含まれています。  
-また、型にはそのデータに関連するための処理も含まれていて、[初めての Udon コンポーネント](/getting-started/your-first-udon-component/)で使った `Rotate` などがそれに当たり、一般的には「メソッド」や「関数」と呼ばれます。  
-数学の関数をイメージするとわかりやすいかもしれませんね (ある入力 A にたいして、一定の結果 B を出力する)。
+また、型にはそのデータに関連する処理も含まれていて、[初めての Udon コンポーネント](/getting-started/your-first-udon-component/)で使った `Rotate` などがそれに当たり、一般的には「メソッド」や「関数」と呼ばれます。  
+メソッドについては、数学の関数をイメージするとわかりやすいかもしれません (ある入力 A にたいして、一定の結果 B を出力する)。
+
+Udon や UdonSharp では、型は通常以下のように表示されます。
+
+<!-- prettier-ignore-start -->
+=== "Udon Graph"
+
+    変数の型は以下の丸で囲まれている部分に記載されている。
+
+    <img src="https://assets.mochizuki.moe/udon/references/udon-graph-images/types-in-udon-graph-1.png" width="250px" data-zoomable="true">
+
+    また、メソッドの型は、以下の丸で囲まれている部分に記載されている。
+
+    <img src="https://assets.mochizuki.moe/udon/references/udon-graph-images/types-in-udon-graph-2.png" width="250px" data-zoomable="true">
+
+=== "UdonSharp"
+
+    ```csharp
+    using UnityEngine;
+
+    namespace NatsunekoLaboratory.Examples
+    {
+        // TestClass も型
+        public class TestClass
+        {
+            private float _a; // この場合は、変数名 (_a) の左にある部分が型を表している
+
+            // 下記の `void` という部分も戻り値(計算結果)の型を示している
+            private void FixedUpdate()
+            {
+                transform.Rotate(/* ... */); // この場合は、エディター上で `transform` にマウスカーソルを持って行くと、型情報がホバーされる
+            }
+        }
+    }
+    ```
+<!-- prettier-ignore-end -->
+
+また、ある特定の型を複数まとめたものを「配列」と呼び、変数名に `[]` と言ったものが付く。  
+例えば、 `float[]` の場合は、 `float` という型が複数集まったものを指します。
+
+<!-- prettier-ignore-start -->
+??? info "Tips - 型エイリアス"
+    Udon や UdonSharp (C#) では、型エイリアスという別名が存在しており、以下の型は、表記が異なる場合があります。  
+    例えば、上記の例として出してある Udon Graph では、変数の型 `float` とメソッドの型 `Single` は同じものを指しています。
+
+    | 元の型 | エイリアス名 (別名) |
+    | --------- | ---------- |
+    | `Boolean` | `bool`     |
+    | `Byte`    | `byte`     |
+    | `SByte`   | `sbyte`    |
+    | `Char`    | `char`     |
+    | `Decimal` | `decimal`  |
+    | `Double`  | `double`   |
+    | `Single`  | `float`    |
+    | `Int32`   | `int`      |
+    | `UInt32`  | `uint`     |
+    | `Int64`   | `long`     |
+    | `UInt64`  | `ulong`    |
+    | `Int16`   | `short`    |
+    | `UInt16`  | `ushort`   |
+    | `Object`  | `object`   |
+    | `String`  | `string`   |
+    | `Void`    | `void`     |
+
+<!-- prettier-ignore-end -->
 
 ### 四則演算
 
@@ -66,10 +130,10 @@ Unity でよく出てくる例で言えば、 Transform 型というものがあ
     }
     ```
 
+<!-- prettier-ignore-end -->
+
 ただし、通常の場合は四則演算は同じ型同士でのみ行えます。  
 多くの場合はそれで十分なのですが、それ以外の場合は、それ専用の関数が用意されていますので、そちらを使うようにすると、計算が行えます。
-
-<!-- prettier-ignore-end -->
 
 ### コメント
 
@@ -90,6 +154,62 @@ Unity でよく出てくる例で言えば、 Transform 型というものがあ
     ```csharp
     // この行はコメントとして扱われる
     /* この範囲だけがコメントとして扱われる */
+    ```
+
+<!-- prettier-ignore-end -->
+
+### ブロック
+
+ブロック (Block) は、1 つ以上のいくつかの処理をまとめたもの (コードブロック) を指します。  
+Udon では、同名のノードが存在していますが、どちらかというとグループ機能がより近いものとなります。
+
+<!-- prettier-ignore-start -->
+=== "Udon Graph"
+
+    <img src="https://assets.mochizuki.moe/udon/references/udon-graph-images/block-statement.png" width="400px" data-zoomable="true">
+
+=== "UdonSharp"
+
+    ```csharp
+    // { } で囲まれている部分がブロックとして見なされる
+    {
+        // なんらかの処理
+    }
+    ```
+
+
+<!-- prettier-ignore-end -->
+
+### 条件分岐
+
+例えば、プレイヤーが自分だったらある特定の処理を行いたい、それ以外の場合は無視したい、といった場合は、条件分岐というものを行う必要があります。  
+条件分岐は、条件を満たした場合 (True となった場合) は特定の処理を行う、もしくはその逆、条件を満たさなかった場合 (False) は特定の処理を行う、といったものを記述できます。
+
+<!-- prettier-ignore-start -->
+=== "Udon Graph"
+
+    下記は `Equals` ノードの結果が `False` であれば、 `Set Tracking` ノードを実行する。  
+    `Branch` ノードの `bool` の値が正しいものであれば `True` が、それ以外の場合は `False` が実行される。
+
+    <img src="https://assets.mochizuki.moe/udon/references/udon-graph-images/conditional-statement.png" width="450px" data-zoomable="true">
+
+=== "UdonSharp"
+
+    ```csharp
+    public override void Interact()
+    {
+        var player = Networking.LocalPlayer;
+
+        if (player == null)
+        {
+            // 条件を満たした場合の処理
+        }
+        else
+        {
+            // 条件を満たさなかった場合の処理
+            // else 以降は、必要が無ければ省略することが出来る
+        }
+    }
     ```
 
 
