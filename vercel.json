@@ -1,15 +1,3 @@
 {
-  "trailingSlash": true,
-  "routes": [{ "src": "/(.*)", "dest": "/index.md" }],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Permissions-Policy",
-          "value": "interest-cohort=()"
-        }
-      ]
-    }
-  ]
+  "routes": [{ "src": "/(.*)", "dest": "/index.md" }]
 }
